@@ -34,7 +34,7 @@ class CorMaintOccGraph extends PureComponent {
   }
 
   getDataSets() {
-    let allEquipmentTypes = this.props.correctiveMaintenances.map(function (currentMaintenance) {
+    let allEquipmentTypes = this.props.correctiveMaintenances.allinstances.map(function (currentMaintenance) {
       return currentMaintenance.typeId;
     });
     let uniqueEquipmentTypes = this.uniq(allEquipmentTypes);
@@ -44,7 +44,7 @@ class CorMaintOccGraph extends PureComponent {
       // looping over the 12 months
       for(let i=1; i<=12; i++) {
         let count = 0;
-        let maintListFilteredPerMonthPerType = allCorrectiveMaintences.filter(function (maintenance) {
+        let maintListFilteredPerMonthPerType = allCorrectiveMaintences.allinstances.filter(function (maintenance) {
           if(maintenance.typeId === eqType) {
             let month = maintenance.date.toDate().getMonth()+1;
             if(month === i) {
