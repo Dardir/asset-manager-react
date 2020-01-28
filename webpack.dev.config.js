@@ -9,40 +9,11 @@ const indexFile       = path.resolve(__dirname, 'src/app/index.js');
 const SPLIT_STYLE = true;
 
 const config = {
-  devtool: '#source-map',
+  devtool: 'eval-source-map',
   entry: {
     app: [
       'babel-polyfill',
       indexFile
-    ],
-    vendor: [
-      'prop-types',
-      'react',
-      'react-bootstrap',
-      'react-collapse',
-      'react-dom',
-      'react-height',
-      'react-highlight',
-      'react-motion',
-      'react-notification',
-      'react-redux',
-      'react-router',
-      'react-router-dom',
-      'react-router-redux',
-      'react-svg-morph',
-      'react-tap-event-plugin',
-      'redux',
-      'redux-thunk',
-      'axios',
-      'babel-polyfill',
-      'better-react-spinkit',
-      'bootstrap/dist/js/bootstrap.min.js',
-      'chart.js',
-      'classnames',
-      'history',
-      'jquery',
-      'js-base64',
-      'moment'
     ]
   },
   output: {
@@ -52,7 +23,7 @@ const config = {
   module: {
     rules: [
       {
-        test:     /\.jsx?$/,
+        test:     /\.(js|jsx)?$/,
         exclude:  [nodeModulesDir],
         loader:   'babel-loader'
       },
